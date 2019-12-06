@@ -5,7 +5,7 @@ sudo pip3 install awscli --upgrade --user
 mkdir -p "/home/ubuntu/.aws" && touch "/home/ubuntu/.aws/credentials"
 sudo echo "[default]" >> ~/.aws/credentials
 sudo echo "aws_access_key_id = mykey" >> ~/.aws/credentials
-sudo echo "aws_secret_access_key = mysecret" >> ~/.aws/credentials
+sudo echo "aws_secret_access_key = mysecretkey" >> ~/.aws/credentials
 sudo echo "[default]" >> ~/.aws/config
 wget https://github.com/benzoss/smocito/blob/master/cdata.txt
 wget https://github.com/benzoss/smocito/blob/master/cscript.sh
