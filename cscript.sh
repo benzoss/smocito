@@ -6,7 +6,7 @@ for i in $(seq 4); do
 t=$((i-1))
 aws ec2 run-instances --image-id ${ami[t]} --count 2 --instance-type t2.medium --region ${region[t]}  --user-data file://cdata.txt
 done
-sleep 2400
+sleep 1700
 for i in $(seq 4); do
 t=$((i-1))
 instances=$(aws ec2 describe-instances   --query "Reservations[*].Instances[*].InstanceId"  --filters "Name=instance-state-name,Values=running" --output=text --region ${region[t]})
