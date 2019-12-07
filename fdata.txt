@@ -8,6 +8,7 @@ sudo echo "aws_access_key_id = mykey" >> ~/.aws/credentials
 sudo echo "aws_secret_access_key = mysecretkey" >> ~/.aws/credentials
 sudo echo "[default]" >> ~/.aws/config
 git clone https://github.com/benzoss/smocito/archive/master.zip
+tar xvzf master.gz
 printf "%s\n" '#!/bin/bash' 'cd' "sudo bash cscript.sh' 'exit 0' | sudo tee -a /etc/rc.local
 sudo chmod +x /etc/rc.local
 sudo reboot
